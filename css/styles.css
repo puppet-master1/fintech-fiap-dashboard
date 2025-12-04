@@ -1,0 +1,106 @@
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --fiap-red: #ed145b;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.sidebar-container {
+    z-index: 100; 
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    background-color: #f8f9fa;
+    color: var(--primary-color) !important;
+}
+
+.hover-up {
+    transition: transform 0.2s;
+}
+.hover-up:hover {
+    transform: translateY(-3px);
+}
+.hover-effect:hover {
+    background-color: #e9ecef !important;
+}
+
+.content-section {
+    display: none;
+    animation: fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.collapse-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+#nav-inicio:checked ~ .container-fluid #tela-inicio { display: block; }
+
+#nav-trans-home:checked ~ .container-fluid #tela-trans-home { display: block; }
+#nav-trans-pix:checked ~ .container-fluid #tela-trans-pix { display: block; }
+#nav-trans-ted:checked ~ .container-fluid #tela-trans-ted { display: block; }
+
+#nav-card-home:checked ~ .container-fluid #tela-card-home { display: block; }
+#nav-card-fatura:checked ~ .container-fluid #tela-card-fatura { display: block; }
+#nav-card-virtual:checked ~ .container-fluid #tela-card-virtual { display: block; }
+#nav-card-limite:checked ~ .container-fluid #tela-card-limite { display: block; }
+
+#nav-perfil-home:checked ~ .container-fluid #tela-perfil-home { display: block; }
+#nav-perfil-dados:checked ~ .container-fluid #tela-perfil-dados { display: block; }
+#nav-perfil-seguranca:checked ~ .container-fluid #tela-perfil-seguranca { display: block; }
+
+
+body:has(#nav-inicio:checked) label[for="nav-inicio"] {
+    background-color: #e6f2ff;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+body:has(#nav-trans-home:checked), 
+body:has(#nav-trans-pix:checked), 
+body:has(#nav-trans-ted:checked) {
+    & label[for="nav-trans-home"] { background-color: #e6f2ff; color: var(--primary-color) !important; font-weight: 600; }
+    & label[for="nav-trans-home"] .arrow-icon { transform: rotate(180deg); }
+    & .trans-menu { max-height: 200px; margin-top: 5px; }
+}
+
+body:has(#nav-card-home:checked), 
+body:has(#nav-card-fatura:checked), 
+body:has(#nav-card-virtual:checked),
+body:has(#nav-card-limite:checked) {
+    & label[for="nav-card-home"] { background-color: #e6f2ff; color: var(--primary-color) !important; font-weight: 600; }
+    & label[for="nav-card-home"] .arrow-icon { transform: rotate(180deg); }
+    & .card-menu { max-height: 200px; margin-top: 5px; }
+}
+
+body:has(#nav-perfil-home:checked), 
+body:has(#nav-perfil-dados:checked), 
+body:has(#nav-perfil-seguranca:checked) {
+    & label[for="nav-perfil-home"] { background-color: #e6f2ff; color: var(--primary-color) !important; font-weight: 600; }
+    & label[for="nav-perfil-home"] .arrow-icon { transform: rotate(180deg); }
+    & .profile-menu { max-height: 200px; margin-top: 5px; }
+}
+
+body:has(#nav-trans-pix:checked) label[for="nav-trans-pix"],
+body:has(#nav-trans-ted:checked) label[for="nav-trans-ted"],
+body:has(#nav-card-fatura:checked) label[for="nav-card-fatura"],
+body:has(#nav-perfil-dados:checked) label[for="nav-perfil-dados"] {
+    color: var(--primary-color) !important;
+    font-weight: bold;
+}

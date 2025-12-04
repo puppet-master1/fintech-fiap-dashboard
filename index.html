@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | FIAP Fintech</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-light">
+
+    <input type="radio" name="nav" id="nav-inicio" checked hidden>
+    
+    <input type="radio" name="nav" id="nav-trans-home" hidden>
+    <input type="radio" name="nav" id="nav-trans-pix" hidden>
+    <input type="radio" name="nav" id="nav-trans-ted" hidden>
+    
+    <input type="radio" name="nav" id="nav-card-home" hidden>
+    <input type="radio" name="nav" id="nav-card-fatura" hidden>
+    <input type="radio" name="nav" id="nav-card-virtual" hidden>
+    <input type="radio" name="nav" id="nav-card-limite" hidden>
+
+    <input type="radio" name="nav" id="nav-perfil-home" hidden>
+    <input type="radio" name="nav" id="nav-perfil-dados" hidden>
+    <input type="radio" name="nav" id="nav-perfil-seguranca" hidden>
+
+    <div class="container-fluid">
+        <div class="row min-vh-100">
+            
+            <nav class="col-12 col-md-3 col-lg-2 bg-white border-end shadow-sm p-0 d-flex flex-column sidebar-container">
+                <div class="p-4 text-center border-bottom">
+                    <h5 class="fw-bold mb-0 text-dark">Projeto Fintech</h5>
+                    <small class="text-danger fw-bold ls-1">FIAP</small>
+                </div>
+
+                <ul class="nav flex-column p-2 gap-1 flex-grow-1">
+                    <li class="nav-item">
+                        <label for="nav-inicio" class="nav-link d-flex align-items-center gap-2 rounded pointer">
+                            <i class="ph ph-house fs-5"></i> Início
+                        </label>
+                    </li>
+                    <li class="nav-item">
+                        <label for="nav-trans-home" class="nav-link d-flex align-items-center justify-content-between rounded pointer">
+                            <div class="d-flex align-items-center gap-2"><i class="ph ph-arrows-left-right fs-5"></i> Transferir</div>
+                            <i class="ph ph-caret-down arrow-icon"></i>
+                        </label>
+                        <ul class="submenu list-unstyled ps-4 collapse-menu trans-menu">
+                            <li><label for="nav-trans-pix" class="nav-link py-1 small text-muted pointer">Área Pix</label></li>
+                            <li><label for="nav-trans-ted" class="nav-link py-1 small text-muted pointer">TED / DOC</label></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <label for="nav-card-home" class="nav-link d-flex align-items-center justify-content-between rounded pointer">
+                            <div class="d-flex align-items-center gap-2"><i class="ph ph-credit-card fs-5"></i> Cartões</div>
+                            <i class="ph ph-caret-down arrow-icon"></i>
+                        </label>
+                        <ul class="submenu list-unstyled ps-4 collapse-menu card-menu">
+                            <li><label for="nav-card-fatura" class="nav-link py-1 small text-muted pointer">Minha Fatura</label></li>
+                            <li><label for="nav-card-virtual" class="nav-link py-1 small text-muted pointer">Cartão Virtual</label></li>
+                            <li><label for="nav-card-limite" class="nav-link py-1 small text-muted pointer">Ajustar Limite</label></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <label for="nav-perfil-home" class="nav-link d-flex align-items-center justify-content-between rounded pointer">
+                            <div class="d-flex align-items-center gap-2"><i class="ph ph-user fs-5"></i> Perfil</div>
+                            <i class="ph ph-caret-down arrow-icon"></i>
+                        </label>
+                        <ul class="submenu list-unstyled ps-4 collapse-menu profile-menu">
+                            <li><label for="nav-perfil-dados" class="nav-link py-1 small text-muted pointer">Dados Pessoais</label></li>
+                            <li><label for="nav-perfil-seguranca" class="nav-link py-1 small text-muted pointer">Segurança</label></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="p-3 border-top mt-auto">
+                    <a href="#" class="nav-link text-danger d-flex align-items-center gap-2 fw-bold"><i class="ph ph-sign-out fs-5"></i> Sair</a>
+                </div>
+            </nav>
+
+            <main class="col-12 col-md-9 col-lg-10 bg-light py-5 d-flex justify-content-center align-items-start wrapper-content">
+                <div class="card border-0 shadow card-principal p-4 w-100" style="max-width: 550px;">
+                    
+                    <section class="content-section" id="tela-inicio">
+                        <div class="text-center mb-4">
+                            <h2 class="text-primary fw-bold">Olá, Usuário!</h2>
+                            <p class="text-secondary">Resumo da sua conta</p>
+                        </div>
+                        <div class="text-center mb-4">
+                            <h1 class="display-4 fw-bold text-primary">R$ 1.250,00</h1>
+                            <span class="badge bg-light text-dark border">Saldo disponível</span>
+                        </div>
+                        <h6 class="text-uppercase text-secondary fw-bold small mb-3">Últimas Movimentações</h6>
+                        <div class="d-flex align-items-center p-3 bg-light rounded mb-2">
+                            <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;"><i class="ph ph-arrow-down-left"></i></div>
+                            <div class="flex-grow-1"><strong class="d-block text-dark">Pix Recebido</strong><small class="text-muted">Hoje, 10:30</small></div>
+                            <strong class="text-success">+ R$ 200,00</strong>
+                        </div>
+                    </section>
+
+                    <section class="content-section" id="tela-trans-home">
+                        <div class="text-center mb-4">
+                            <h2 class="text-primary fw-bold">Transferência</h2>
+                            <p class="text-secondary">Escolha o método</p>
+                        </div>
+                        <label for="nav-trans-pix" class="d-flex align-items-center p-3 bg-light rounded mb-3 pointer hover-effect w-100">
+                            <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;"><i class="ph ph-qr-code fs-4"></i></div>
+                            <div class="text-start flex-grow-1"><strong class="d-block text-dark">Área Pix</strong><small class="text-muted">Instantâneo</small></div>
+                            <i class="ph ph-caret-right"></i>
+                        </label>
+                        <label for="nav-trans-ted" class="d-flex align-items-center p-3 bg-light rounded pointer hover-effect w-100">
+                            <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;"><i class="ph ph-bank fs-4"></i></div>
+                            <div class="text-start flex-grow-1"><strong class="d-block text-dark">TED / DOC</strong><small class="text-muted">Outros bancos</small></div>
+                            <i class="ph ph-caret-right"></i>
+                        </label>
+                    </section>
+
+                    <section class="content-section" id="tela-trans-pix">
+                        <div class="text-center mb-4">
+                            <div class="mx-auto bg-success-subtle text-success rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;"><i class="ph ph-qr-code fs-2"></i></div>
+                            <h3 class="fw-bold">Área Pix</h3>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-muted text-uppercase">Chave Pix</label>
+                            <input type="text" class="form-control form-control-lg bg-light border-0" placeholder="CPF, E-mail ou Celular">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold text-muted text-uppercase">Valor</label>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text border-0 bg-light text-primary fw-bold">R$</span>
+                                <input type="number" class="form-control bg-light border-0 text-primary fw-bold" placeholder="0,00">
+                            </div>
+                        </div>
+                        <button class="btn btn-success w-100 py-3 rounded-pill fw-bold shadow-sm hover-up">Pagar com Pix</button>
+                    </section>
+
+                    <section class="content-section" id="tela-trans-ted">
+                        <div class="text-center mb-4">
+                            <div class="mx-auto bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;"><i class="ph ph-bank fs-2"></i></div>
+                            <h3 class="fw-bold">TED / DOC</h3>
+                            <p class="text-secondary small">Transferência para outros bancos</p>
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">Instituição Financeira</label>
+                                <select class="form-select bg-light border-0 py-2">
+                                    <option selected>Selecione o banco...</option>
+                                    <option value="1">001 - Banco do Brasil</option>
+                                    <option value="2">237 - Bradesco</option>
+                                    <option value="3">341 - Itaú</option>
+                                    <option value="4">260 - Nubank</option>
+                                </select>
+                            </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-4">
+                                    <label class="form-label small fw-bold text-muted">Agência</label>
+                                    <input type="text" class="form-control bg-light border-0" placeholder="0000">
+                                </div>
+                                <div class="col-8">
+                                    <label class="form-label small fw-bold text-muted">Conta com Dígito</label>
+                                    <input type="text" class="form-control bg-light border-0" placeholder="00000-0">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small fw-bold text-muted">Valor a transferir</label>
+                                <div class="input-group">
+                                    <span class="input-group-text border-0 bg-light text-primary fw-bold">R$</span>
+                                    <input type="number" class="form-control bg-light border-0 fw-bold" placeholder="0,00">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold hover-up">Confirmar TED</button>
+                        </form>
+                    </section>
+
+                    <section class="content-section" id="tela-card-home">
+                        <div class="text-center mb-4">
+                            <h2 class="text-primary fw-bold">Meus Cartões</h2>
+                        </div>
+                        <div class="card text-white bg-dark mb-4 border-0 shadow" style="background: linear-gradient(135deg, #1e1e2f 0%, #32324e 100%); min-height: 200px;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="bg-warning rounded" style="width: 40px; height: 30px;"></div>
+                                    <i class="ph ph-wifi-high fs-4"></i>
+                                </div>
+                                <h4 class="font-monospace ls-2 my-3">4829 **** **** 3920</h4>
+                                <div class="d-flex justify-content-between small text-uppercase"><span>Seu Nome</span><span>12/28</span></div>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <label for="nav-card-fatura" class="btn btn-outline-primary py-2 rounded-pill pointer">Ver Fatura</label>
+                            <label for="nav-card-virtual" class="btn btn-dark py-2 rounded-pill pointer">Cartão Virtual</label>
+                        </div>
+                    </section>
+
+                    <section class="content-section" id="tela-card-fatura">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold">Fatura Atual</h2>
+                            <p class="text-danger fw-bold display-5">R$ 1.450,30</p>
+                        </div>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item d-flex justify-content-between py-3"><span>Uber</span><strong>R$ 24,90</strong></li>
+                            <li class="list-group-item d-flex justify-content-between py-3"><span>Spotify</span><strong>R$ 21,90</strong></li>
+                            <li class="list-group-item d-flex justify-content-between py-3"><span>Mercado</span><strong>R$ 450,00</strong></li>
+                        </ul>
+                        <button class="btn btn-danger w-100 py-3 rounded-pill fw-bold hover-up">Pagar Fatura</button>
+                    </section>
+
+                    <section class="content-section" id="tela-card-virtual">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold text-primary">Cartão Virtual</h2>
+                            <p class="text-secondary small">Mais segurança para compras online</p>
+                        </div>
+                        <div class="card text-white mb-4 border-0 shadow" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); min-height: 200px;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="bg-white rounded opacity-50" style="width: 40px; height: 30px;"></div>
+                                    <i class="ph ph-lock-key fs-4"></i>
+                                </div>
+                                <h4 class="font-monospace ls-2 my-3">5500 1234 5678 9000</h4>
+                                <div class="d-flex justify-content-between small text-uppercase">
+                                    <span>VIRTUAL CARD</span><span>12/29</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="alert alert-light border text-center text-muted small">
+                            Este cartão é exclusivo para uso digital. O número é diferente do seu cartão físico.
+                        </div>
+                        <button class="btn btn-outline-danger w-100 rounded-pill hover-up">Bloquear Cartão Virtual</button>
+                    </section>
+
+                    <section class="content-section" id="tela-card-limite">
+                        <div class="text-center mb-5">
+                            <h2 class="fw-bold text-primary">Ajuste de Limite</h2>
+                            <p class="text-secondary">Gerencie seus gastos</p>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-2 fw-bold">
+                            <span class="text-danger">Gasto: R$ 1.450</span>
+                            <span class="text-success">Disponível: R$ 3.550</span>
+                        </div>
+                        
+                        <div class="progress mb-4" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 30%"></div>
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="form-label fw-bold text-muted">Novo Limite Total</label>
+                            <input type="range" class="form-range" min="1000" max="10000" step="100">
+                            <div class="text-center mt-2 display-6 fw-bold text-primary">R$ 5.000,00</div>
+                        </div>
+                        
+                        <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold hover-up">Salvar Novo Limite</button>
+                    </section>
+
+                    <section class="content-section" id="tela-perfil-home">
+                         <div class="text-center mt-5">
+                            <div class="spinner-border text-primary" role="status"></div>
+                            <p class="mt-3 text-muted">Selecione uma opção no menu...</p>
+                         </div>
+                    </section>
+
+                    <section class="content-section" id="tela-perfil-dados">
+                        <div class="text-center mb-4">
+                            <div class="rounded-circle bg-primary text-white mx-auto d-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px; font-size: 2rem;">Eu</div>
+                            <h3 class="fw-bold">Meus Dados</h3>
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">Nome Completo</label>
+                                <input type="text" class="form-control bg-light border-0 py-3" value="Admin FIAP Fintech">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">E-mail</label>
+                                <input type="email" class="form-control bg-light border-0 py-3" value="aluno@fiap.com.br">
+                            </div>
+                            <button class="btn btn-primary w-100 py-3 rounded-pill mt-2 hover-up">Salvar Alterações</button>
+                        </form>
+                    </section>
+
+                    <section class="content-section" id="tela-perfil-seguranca">
+                        <div class="text-center mb-4">
+                            <div class="mx-auto bg-secondary-subtle text-secondary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;"><i class="ph ph-shield-check fs-2"></i></div>
+                            <h3 class="fw-bold">Segurança</h3>
+                            <p class="text-secondary small">Gerencie sua senha de acesso</p>
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">Senha Atual</label>
+                                <input type="password" class="form-control bg-light border-0 py-3">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">Nova Senha</label>
+                                <input type="password" class="form-control bg-light border-0 py-3">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small fw-bold text-muted">Confirmar Nova Senha</label>
+                                <input type="password" class="form-control bg-light border-0 py-3">
+                            </div>
+                            <button class="btn btn-dark w-100 py-3 rounded-pill fw-bold hover-up">Atualizar Senha</button>
+                        </form>
+                    </section>
+
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
